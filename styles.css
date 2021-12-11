@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+.hamburger {
+  display: none !important;
+  border: none;
+  background: transparent;
+  font-size: 1.3rem;
+  color: grey;
+}
+
+/* 
+  ===================
+  1. HORIZONAL NAVBAR
+  ===================
+*/
+header {
+  width: 80%;
+  margin: 0 auto;
+  border-bottom: 1px solid grey;
+  padding: 1em 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-links {
+  list-style-type: none;
+  display: flex;
+}
+
+/* adds horizontal spacing between links */
+.nav-links > * + * {
+  margin-left: 1.5em;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-weight: 700;
+  color: grey;
+  padding: 0.3em 2em;
+  transition: background-color 150ms ease-in-out, color 150ms ease-in-out;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  background-color: orange;
+  color: #222;
+}
+
+/* 
+  ==================
+  2. VERTICAL NAVBAR
+  ==================
+*/
+.side-nav {
+  background: #f3f3f3;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: -50%;
+  transition: all 150ms ease-in-out;
+}
+
+.side-nav-shown {
+  left: 0;
+}
+
+.side-nav-links {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+}
+
+/* adds vertical between links */
+.side-nav-links > * + * {
+  margin-top: 1em;
+}
+
+/* 
+  ================
+  3. MEDIA QUERIES
+  ================
+*/
+@media (max-width: 600px) {
+  .hamburger {
+    display: block !important;
+    margin-left: auto;
+  }
+
+  .nav {
+    display: none;
+  }
+}
+
+@media (min-width: 600px) {
+  .side-nav {
+    display: none !important;
+  }
+}
